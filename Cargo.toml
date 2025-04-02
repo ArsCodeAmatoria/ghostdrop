@@ -6,8 +6,13 @@ authors = ["Your Name <your.email@example.com>"]
 description = "A Windows shellcode execution tool for red team operations"
 
 [dependencies]
-winapi = { version = "0.3", features = ["winuser", "processthreadsapi", "memoryapi"] }
+winapi = { version = "0.3", features = ["winuser", "processthreadsapi", "memoryapi", "winbase", "winnt", "tlhelp32", "psapi", "sysinfoapi", "winreg", "winsock2", "ws2def"] }
 clap = { version = "4.4", features = ["derive"] }
+rand = "0.8"
+aes = "0.8"
+block-modes = "0.9"
+hex = "0.4"
+windows-sys = { version = "0.48", features = ["Win32_System_Threading", "Win32_Foundation"] }
 
 [target.'cfg(target_os = "windows")'.dependencies]
-winapi = { version = "0.3", features = ["winuser", "processthreadsapi", "memoryapi"] } 
+winapi = { version = "0.3", features = ["winuser", "processthreadsapi", "memoryapi", "winbase", "winnt", "tlhelp32", "psapi", "sysinfoapi", "winreg", "winsock2", "ws2def"] } 
